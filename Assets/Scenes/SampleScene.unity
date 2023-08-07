@@ -1609,7 +1609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83e603ab3da3e84bb5f3b40f7f28d61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
 --- !u!1 &39773570
 GameObject:
   m_ObjectHideFlags: 0
@@ -19445,7 +19445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83e603ab3da3e84bb5f3b40f7f28d61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
 --- !u!1 &455424130
 GameObject:
   m_ObjectHideFlags: 0
@@ -24470,7 +24470,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1240887441953726, guid: 8a976dcd328a4664c85144f33b9c46b0, type: 3}
   firePoint: {fileID: 397418605}
   enemyTag: Enemy
-  range: 5
+  range: 40
   fireRate: 1
 --- !u!1 &584701104
 GameObject:
@@ -53243,7 +53243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83e603ab3da3e84bb5f3b40f7f28d61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 4
 --- !u!1 &1268454437
 GameObject:
   m_ObjectHideFlags: 0
@@ -59415,7 +59415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83e603ab3da3e84bb5f3b40f7f28d61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
 --- !u!1 &1420056718
 GameObject:
   m_ObjectHideFlags: 0
@@ -77269,7 +77269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83e603ab3da3e84bb5f3b40f7f28d61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
 --- !u!1 &1843075446
 GameObject:
   m_ObjectHideFlags: 0
@@ -77956,7 +77956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83e603ab3da3e84bb5f3b40f7f28d61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
 --- !u!1 &1874254775
 GameObject:
   m_ObjectHideFlags: 0
