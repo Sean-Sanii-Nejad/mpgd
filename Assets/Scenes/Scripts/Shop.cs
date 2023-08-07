@@ -6,32 +6,26 @@ public class Shop : MonoBehaviour {
 
     BuildManager buildManager;
 
+    public TurretBlueprint standardTurret;
+    public TurretBlueprint machineTurret;
+    public TurretBlueprint slowTurret;
+
     void Start(){
         buildManager = BuildManager.instance;
     }
 
-    public void PurchaseStandardTurret(){
-        buildManager.SetTurretToBuild(buildManager.standardTurretPrefab);
+    public void SelectStandardTurret(){
+        buildManager.SelectTurretToBuild(standardTurret);
     }
 
-    public void PurchaseAOETurret()
+    public void SelectLaserTurret()
     {
-        buildManager.SetTurretToBuild(buildManager.aoeTurretPrefab);
+        buildManager.SelectTurretToBuild(machineTurret);
     }
 
-    public void PurchaseLaserTurret()
+    public void SelectSlowTurret()
     {
-        buildManager.SetTurretToBuild(buildManager.laserTurretPrefab);
-    }
-
-    public void PurchaseDefenceTurret()
-    {
-        buildManager.SetTurretToBuild(buildManager.defenceTurretPrefab);
-    }
-
-    public void PurchaseSlowTurret()
-    {
-        buildManager.SetTurretToBuild(buildManager.slowTurretPrefab);
+        buildManager.SelectTurretToBuild(slowTurret);
     }
 
 }

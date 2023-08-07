@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class BuildManager : MonoBehaviour { 
     
-    private GameObject turretToBuild;
-    
-    public GameObject standardTurretPrefab;
-    public GameObject aoeTurretPrefab;
-    public GameObject laserTurretPrefab;
-    public GameObject defenceTurretPrefab;
-    public GameObject slowTurretPrefab;
+    private TurretBlueprint turretToBuild;
 
     public static BuildManager instance;
+
+
+    public bool CanBuild { get { return turretToBuild != null; } }
 
     private void Awake() {
         instance = this;
@@ -21,12 +19,12 @@ public class BuildManager : MonoBehaviour {
     private void Start() {
     }
 
-    public void SetTurretToBuild(GameObject turret) {
+    public void SelectTurretToBuild(TurretBlueprint turret) {
         turretToBuild = turret; 
     }
 
-
-    public GameObject GetTurretToBuild() {
-        return turretToBuild;
+    public void BuildTurretOn(Node node) {
+        GameObject turret = (GameObject)Instantiate(turretToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
+        node.turret = turret;
     }
 }
