@@ -15,7 +15,7 @@ public class Waypoints : MonoBehaviour
             points[i] = transform.GetChild(i);
         }
 
-        points2 = new Transform[transform.childCount];
+        points2 = new Transform[10];
         for (int i = 0; i < points2.Length; i++)
         {
             points2[i] = waypoint_alt.GetChild(i);
