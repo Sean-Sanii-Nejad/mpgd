@@ -5,7 +5,9 @@ using static UnityEngine.GraphicsBuffer;
 
 public class BuildManager : MonoBehaviour { 
     
-    private TurretBlueprint turretToBuild;
+    public TurretBlueprint turretToBuild;
+
+    public GameObject buildEffect;
 
     public static BuildManager instance;
 
@@ -33,5 +35,8 @@ public class BuildManager : MonoBehaviour {
 
         GameObject turret = (GameObject)Instantiate(turretToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
         node.turret = turret;
+
+        GameObject effect = (GameObject) Instantiate(buildEffect, node.GetBuildPosition(), Quaternion.identity);
+        Destroy(effect, 2f);
     }
 }

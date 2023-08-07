@@ -15,11 +15,13 @@ public class Shop : MonoBehaviour {
     }
 
     public void SelectStandardTurret(){
+        Debug.Log("Standard");
         buildManager.SelectTurretToBuild(standardTurret);
     }
 
     public void SelectLaserTurret()
     {
+        Debug.Log("Machine");
         buildManager.SelectTurretToBuild(machineTurret);
     }
 

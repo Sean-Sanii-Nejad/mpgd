@@ -9,6 +9,6 @@ public class HealthUI : MonoBehaviour
 
     void Update()
     {
-        healthText.text = "Health: "+PlayerStats.Money.ToString();
+        healthText.text = "Health: " + PlayerStats.Health;
     }
 }
