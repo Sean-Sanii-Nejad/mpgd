@@ -13,22 +13,18 @@ public class WaveSpawner : MonoBehaviour
 
     void Update() {
         if(countdown <= 0) {
-            SpawnWave();
+            StartCoroutine(SpawnWave());
             countdown = timeBetweenWaves;
         }
-
         countdown -= Time.deltaTime;
     }
 
-    void SpawnWave() {
-
-        for(int i = 0; i < waveIndex; i++) {
-
-        }
-
-
-
+    IEnumerator SpawnWave() {
         waveIndex++;
+        for (int i = 0; i < waveIndex; i++) {
+            SpawnEnemy();
+            yield return new WaitForSeconds(0.5f);
+        }
     }
 
     void SpawnEnemy() {

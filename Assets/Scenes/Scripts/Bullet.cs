@@ -19,7 +19,6 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
         Vector3 dir = target.position - transform.position;
         float distanceThisFrame = speed * Time.deltaTime;
 
@@ -27,12 +26,12 @@ public class Bullet : MonoBehaviour
             HitTarget();
             return;
         }
-
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
     }
 
     void HitTarget() {
         GameObject  effectIns = (GameObject) Instantiate(impactEffect, transform.position, transform.rotation);
+        Destroy(target.gameObject);
         Destroy(effectIns, 2f);
         Destroy(gameObject);    
     }
