@@ -10,7 +10,7 @@ public class Grid : MonoBehaviour
     public float tileWidth = 1.0f;
     public float tileHeight = 1.0f;
     public float noiseScale = 0.1f; // Adjust to change frequency of noise
-    public float threshold = 1f;  // Adjust to increase/decrease land mass
+    public float threshold = 0.5f;  // Adjust to increase/decrease land mass
 
     private void Start()
     {
