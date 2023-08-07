@@ -2,30 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shop : MonoBehaviour
-{
+public class Shop : MonoBehaviour {
+
+    BuildManager buildManager;
+
+    void Start(){
+        buildManager = BuildManager.instance;
+    }
+
     public void PurchaseStandardTurret(){
-        Debug.Log("standard turret");
+        buildManager.SetTurretToBuild(buildManager.standardTurretPrefab);
     }
 
     public void PurchaseAOETurret()
     {
-        Debug.Log("aoe turret");
+        buildManager.SetTurretToBuild(buildManager.aoeTurretPrefab);
     }
 
     public void PurchaseLaserTurret()
     {
-        Debug.Log("laser turret");
+        buildManager.SetTurretToBuild(buildManager.laserTurretPrefab);
     }
 
     public void PurchaseDefenceTurret()
     {
-        Debug.Log("defence turret");
+        buildManager.SetTurretToBuild(buildManager.defenceTurretPrefab);
     }
 
     public void PurchaseSlowTurret()
     {
-        Debug.Log("slow turret");
+        buildManager.SetTurretToBuild(buildManager.slowTurretPrefab);
     }
 
 }

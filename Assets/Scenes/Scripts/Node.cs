@@ -13,12 +13,18 @@ public class Node : MonoBehaviour
 
     private Vector3 positionOffset = new Vector3(0,0.5f,0);
 
+    BuildManager buildManager;
+
     void Start() {
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
+
+        buildManager = BuildManager.instance;
     }
 
     void OnMouseDown() {
+        if (buildManager.GetTurretToBuild() == null) return;
+
         if(turret != null) {
             Debug.Log("Can't Build");
             return;
@@ -32,9 +38,7 @@ public class Node : MonoBehaviour
     }
 
     void OnMouseEnter() {
-
-       
-
+        if (buildManager.GetTurretToBuild() == null) return;
         rend.material.color = hoverColor;
     }
 
