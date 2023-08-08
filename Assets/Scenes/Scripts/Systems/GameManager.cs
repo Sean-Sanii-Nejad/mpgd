@@ -5,7 +5,6 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static bool GameIsOver;
-
     public GameObject gameOverUI;
 
     private void Start()

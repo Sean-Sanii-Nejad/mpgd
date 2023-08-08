@@ -276,10 +276,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83e603ab3da3e84bb5f3b40f7f28d61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  health: 10
+  speed: 10
+  health: 5
   maxHealth: 10
   reward: 20
+  damage: 30
   healthBar: {fileID: 8266608309408030324}
 --- !u!135 &-668523635896635084
 SphereCollider:

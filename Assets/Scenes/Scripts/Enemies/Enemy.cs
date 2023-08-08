@@ -46,6 +46,7 @@ public class Enemy : MonoBehaviour
         if(health <= 0f) {
             Destroy(gameObject);
             PlayerStats.Money += reward;
+            PlayerStats.EnemiesKilled += 1;
         }
     }
 
