@@ -37,13 +37,14 @@ public class Enemy : MonoBehaviour
         speed *= multiplier;
     }
 
-    public void TakeDamage(int amount) {
+    public void TakeDamage(float amount) {
         
         health -= amount;
         healthBar.fillAmount = health / maxHealth;
         
         if(health <= 0f) {
             Destroy(gameObject);
+            PlayerStats.Money += reward;
         }
     }
 

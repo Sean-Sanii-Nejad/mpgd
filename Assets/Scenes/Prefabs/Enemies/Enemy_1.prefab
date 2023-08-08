@@ -278,7 +278,7 @@ MonoBehaviour:
   speed: 3
   health: 30
   maxHealth: 30
-  reward: 20
+  reward: 50
   healthBar: {fileID: 8266608309408030324}
 --- !u!135 &-866210877243486921
 SphereCollider:

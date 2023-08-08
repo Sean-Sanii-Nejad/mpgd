@@ -13,6 +13,8 @@ public class MachineTurret : MonoBehaviour {
     public ParticleSystem impactEffect;
     public ParticleSystem shootEffect;
 
+    public int damageOverTime = 10;
+
     [Header("Attributes")]
     public float range = 15f;
 
@@ -67,8 +69,10 @@ public class MachineTurret : MonoBehaviour {
     }
 
     private void Shoot() {
-        if (!lineRenderer.enabled)
-        {
+        if(target.CompareTag("Enemy")) {
+            target.GetComponent<Enemy>().TakeDamage(damageOverTime * Time.deltaTime);
+        }
+        if (!lineRenderer.enabled) {
             lineRenderer.enabled = true;
             impactEffect.Play();
             shootEffect.Play();
@@ -77,5 +81,7 @@ public class MachineTurret : MonoBehaviour {
         lineRenderer.SetPosition(1, target.position);
 
         impactEffect.transform.position = target.position;
+
+
     }
 }

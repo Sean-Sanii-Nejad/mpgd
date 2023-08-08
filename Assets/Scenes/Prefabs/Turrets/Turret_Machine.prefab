@@ -175,6 +175,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 1068854696613247349}
   impactEffect: {fileID: 6214982574028392751}
   shootEffect: {fileID: 3275788036521062583}
+  damageOverTime: 7
   range: 10
 --- !u!120 &1068854696613247349
 LineRenderer:
