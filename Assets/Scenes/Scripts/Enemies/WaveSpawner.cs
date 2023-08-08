@@ -20,9 +20,9 @@ public class WaveSpawner : MonoBehaviour
 
     public void Increment()
     {
-        waveIndex++;
         wait = false;
         UpdateDisplay();
+        waveIndex++;
     }
 
     void Update()
@@ -58,16 +58,20 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnWave1()
     {
+        Increment();
+        PlayerStats.Rounds += 1;
         Debug.Log("1");
         isSpawning = true;
         yield return SpawnEnemies(enemyPreFab_0, 8, 0.3f);
-        //yield return SpawnEnemies(enemyPreFab_1, 4, 0.6f);
+        yield return SpawnEnemies(enemyPreFab_1, 4, 0.6f);
         isSpawning = false;
         wait = true;
     }
 
     IEnumerator SpawnWave2()
     {
+        Increment();
+        PlayerStats.Rounds += 1;
         Debug.Log("2");
         isSpawning = true;
         yield return SpawnEnemies(enemyPreFab_0, 2, 0.3f);
@@ -78,6 +82,8 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnWave3()
     {
+        Increment();
+        PlayerStats.Rounds += 1;
         Debug.Log("3");
         isSpawning = true;
         yield return SpawnEnemies(enemyPreFab_0, 8, 0.1f);
@@ -88,6 +94,8 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnWave4()
     {
+        Increment();
+        PlayerStats.Rounds += 1;
         isSpawning = true;
         yield return SpawnEnemies(enemyPreFab_0, 8, 0.1f);
         yield return SpawnEnemies(enemyPreFab_1, 2, 0.5f);
@@ -96,6 +104,8 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnWave5()
     {
+        Increment();
+        PlayerStats.Rounds += 1;
         isSpawning = true;
         yield return SpawnEnemies(enemyPreFab_0, 8, 0.1f);
         yield return SpawnEnemies(enemyPreFab_1, 2, 0.5f);

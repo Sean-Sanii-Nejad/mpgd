@@ -279,6 +279,7 @@ MonoBehaviour:
   health: 30
   maxHealth: 30
   reward: 50
+  damage: 40
   healthBar: {fileID: 8266608309408030324}
 --- !u!135 &-866210877243486921
 SphereCollider:

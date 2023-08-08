@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     public float maxHealth = 10f;
 
     public int reward = 5;
+    public int damage = 10;
 
     bool waypoint_type;
 
@@ -60,15 +61,25 @@ public class Enemy : MonoBehaviour
     private void GetNextWaypoint() {
 
         if(wavepointIndex >= Waypoints.points.Length - 1 && waypoint_type == true) {
+
+            if (PlayerStats.Health > 0)
+            {
+                PlayerStats.Health -= damage;
+            }
             Destroy(gameObject);
             return;
+            
         }
         else if (wavepointIndex >= Waypoints.points2.Length - 1 && waypoint_type == false)
         {
+            if (PlayerStats.Health > 0)
+            {
+                PlayerStats.Health -= damage;
+            }
             Destroy(gameObject);
             return;
-        }
 
+        }
         wavepointIndex++;
         if (waypoint_type) {
             target = Waypoints.points[wavepointIndex];

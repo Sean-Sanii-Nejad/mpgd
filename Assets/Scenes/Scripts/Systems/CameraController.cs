@@ -10,6 +10,13 @@ public class CameraController : MonoBehaviour
 
     void Update() {
 
+        if (GameManager.GameIsOver)
+        {
+            //this.enabled = false;
+            return;
+        }
+            
+
         if (Input.GetKey("w")) {
             transform.Translate(Vector3.forward * panSpeed * Time.deltaTime, Space.Self);
         }
@@ -17,7 +24,6 @@ public class CameraController : MonoBehaviour
         {
             transform.Translate(Vector3.back * panSpeed * Time.deltaTime, Space.Self);
         }
-
         if (Input.GetKey("d"))
         {
             transform.Translate(Vector3.right * panSpeed * Time.deltaTime, Space.Self);
