@@ -15,18 +15,14 @@ public class Shop : MonoBehaviour {
     }
 
     public void SelectStandardTurret(){
-        Debug.Log("Standard");
         buildManager.SelectTurretToBuild(standardTurret);
     }
 
-    public void SelectLaserTurret()
-    {
-        Debug.Log("Machine");
+    public void SelectLaserTurret() {
         buildManager.SelectTurretToBuild(machineTurret);
     }
 
-    public void SelectSlowTurret()
-    {
+    public void SelectSlowTurret() {
         buildManager.SelectTurretToBuild(slowTurret);
     }
 

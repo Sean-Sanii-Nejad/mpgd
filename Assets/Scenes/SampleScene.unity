@@ -48228,8 +48228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d6f7b3e2ce5da940917d15642c678b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPreFab_0: {fileID: 4146184317431807563, guid: 40d70696e898a10459073da3e5288686, type: 3}
-  enemyPreFab_1: {fileID: 7090071219562156059, guid: 4cfc1c383125e3d43a6b09f1e96b8d66, type: 3}
+  enemyPreFab_0: {fileID: 893957168228694328, guid: f83a7e2167c642949a04c0d475d727d9, type: 3}
+  enemyPreFab_1: {fileID: 893957168228694328, guid: d648ae98aa7efbc4294a8c876778c2be, type: 3}
   enemyPreFab_2: {fileID: 2051787657139058462, guid: 0583275a55ffa2a4c97f2c7acdb3f2a2, type: 3}
   timeBetweenWaves: 2
   indexDisplay: {fileID: 406984135}

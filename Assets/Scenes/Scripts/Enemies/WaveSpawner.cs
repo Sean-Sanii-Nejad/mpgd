@@ -61,7 +61,7 @@ public class WaveSpawner : MonoBehaviour
         Debug.Log("1");
         isSpawning = true;
         yield return SpawnEnemies(enemyPreFab_0, 8, 0.3f);
-        yield return SpawnEnemies(enemyPreFab_1, 4, 0.6f);
+        //yield return SpawnEnemies(enemyPreFab_1, 4, 0.6f);
         isSpawning = false;
         wait = true;
     }

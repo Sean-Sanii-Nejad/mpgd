@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -10,11 +11,15 @@ public class Enemy : MonoBehaviour
     private Transform target;
     private int wavepointIndex = 0;
 
-    public int health = 10;
+    public float health = 10f;
+    public float maxHealth = 10f;
 
     public int reward = 5;
 
     bool waypoint_type;
+
+    [Header("Unity Stuff")]
+    public Image healthBar;
 
     private void Start() {
         if(Random.value < 0.5f) {
@@ -24,6 +29,21 @@ public class Enemy : MonoBehaviour
         else {
             waypoint_type = false;
             target = Waypoints.points2[0];
+        }
+    }
+
+    public void AdjustSpeed(float multiplier)
+    {
+        speed *= multiplier;
+    }
+
+    public void TakeDamage(int amount) {
+        
+        health -= amount;
+        healthBar.fillAmount = health / maxHealth;
+        
+        if(health <= 0f) {
+            Destroy(gameObject);
         }
     }
 
@@ -55,6 +75,5 @@ public class Enemy : MonoBehaviour
         else {
             target = Waypoints.points2[wavepointIndex];
         }
-
     }
 }

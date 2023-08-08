@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -31,7 +32,8 @@ public class Bullet : MonoBehaviour
 
     void HitTarget() {
         GameObject  effectIns = (GameObject) Instantiate(impactEffect, transform.position, transform.rotation);
-        Destroy(target.gameObject);
+
+        target.gameObject.GetComponent<Enemy>().TakeDamage(5);
         Destroy(effectIns, 2f);
         Destroy(gameObject);    
     }
