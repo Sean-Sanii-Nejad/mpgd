@@ -69668,7 +69668,6 @@ GameObject:
   - component: {fileID: 1220776342}
   - component: {fileID: 1220776345}
   - component: {fileID: 1220776344}
-  - component: {fileID: 1220776343}
   - component: {fileID: 1220776346}
   m_Layer: 5
   m_Name: Cost
@@ -69698,21 +69697,6 @@ RectTransform:
   m_AnchoredPosition: {x: 61.98282, y: -47}
   m_SizeDelta: {x: -63.1518, y: -100.2298}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1220776343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1220776341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe8f67768a70eb445adaeb942efa565c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  image: {fileID: 0}
-  color_0: {r: 0, g: 0, b: 0, a: 0}
-  color_1: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1220776344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74355,7 +74339,6 @@ GameObject:
   - component: {fileID: 1310170920}
   - component: {fileID: 1310170923}
   - component: {fileID: 1310170922}
-  - component: {fileID: 1310170921}
   - component: {fileID: 1310170924}
   m_Layer: 5
   m_Name: Cost
@@ -74385,21 +74368,6 @@ RectTransform:
   m_AnchoredPosition: {x: 64, y: -47}
   m_SizeDelta: {x: -63.1518, y: -100.2298}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1310170921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1310170919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae2154ccb1c4a754084cb7e3a192126e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  image: {fileID: 0}
-  color_0: {r: 0, g: 0, b: 0, a: 0}
-  color_1: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1310170922
 MonoBehaviour:
   m_ObjectHideFlags: 0
