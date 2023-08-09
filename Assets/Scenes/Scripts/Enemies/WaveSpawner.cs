@@ -20,6 +20,7 @@ public class WaveSpawner : MonoBehaviour
 
     public void Increment()
     {
+        if(isSpawning) return;
         wait = false;
         UpdateDisplay();
         waveIndex++;
@@ -27,6 +28,7 @@ public class WaveSpawner : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(waveIndex);
         if (!isSpawning && !wait)
         {
             switch (waveIndex)
@@ -40,11 +42,8 @@ public class WaveSpawner : MonoBehaviour
                 case 3:
                     StartCoroutine(SpawnWave3());
                     break;
-                case 4:
+                default: 
                     StartCoroutine(SpawnWave4());
-                    break;
-                case 5:
-                    StartCoroutine(SpawnWave5());
                     break;
             }
         }
@@ -58,7 +57,6 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnWave1()
     {
-        Increment();
         PlayerStats.Rounds += 1;
         isSpawning = true;
         yield return SpawnEnemies(enemyPreFab_0, 8, 0.3f);
@@ -69,7 +67,6 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnWave2()
     {
-        Increment();
         PlayerStats.Rounds += 1;
         isSpawning = true;
         yield return SpawnEnemies(enemyPreFab_0, 2, 0.3f);
@@ -80,32 +77,20 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnWave3()
     {
-        Increment();
         PlayerStats.Rounds += 1;
         isSpawning = true;
-        yield return SpawnEnemies(enemyPreFab_0, 8, 0.1f);
-        yield return SpawnEnemies(enemyPreFab_1, 2, 0.5f);
+        yield return SpawnEnemies(enemyPreFab_0, 0, 0.1f);
+        yield return SpawnEnemies(enemyPreFab_1, 10, 0.5f);
         isSpawning = false;
         wait = true;
     }
 
     IEnumerator SpawnWave4()
     {
-        Increment();
         PlayerStats.Rounds += 1;
         isSpawning = true;
-        yield return SpawnEnemies(enemyPreFab_0, 8, 0.1f);
-        yield return SpawnEnemies(enemyPreFab_1, 2, 0.5f);
-        isSpawning = false;
-    }
-
-    IEnumerator SpawnWave5()
-    {
-        Increment();
-        PlayerStats.Rounds += 1;
-        isSpawning = true;
-        yield return SpawnEnemies(enemyPreFab_0, 8, 0.1f);
-        yield return SpawnEnemies(enemyPreFab_1, 2, 0.5f);
+        yield return SpawnEnemies(enemyPreFab_0, 30, 0.1f);
+        yield return SpawnEnemies(enemyPreFab_1, 30, 0.5f);
         isSpawning = false;
     }
 

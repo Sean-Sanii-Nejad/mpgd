@@ -13,6 +13,8 @@ public class Turret : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
 
+    private AudioSource audioSource;
+
 
     public string enemyTag = "Enemy";
 
@@ -23,6 +25,7 @@ public class Turret : MonoBehaviour
 
     void Start() {
         InvokeRepeating("UpdateTarget", 0f, 1f);
+        audioSource= GetComponent<AudioSource>();
     }
 
     void UpdateTarget() {
@@ -67,6 +70,7 @@ public class Turret : MonoBehaviour
     }
 
     private void Shoot() {
+        audioSource.Play();
         GameObject bulletGO = (GameObject) Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
         if(bullet != null) {

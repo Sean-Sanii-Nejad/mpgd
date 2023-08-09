@@ -13,6 +13,8 @@ public class MachineTurret : MonoBehaviour {
     public ParticleSystem impactEffect;
     public ParticleSystem shootEffect;
 
+    private AudioSource audioSource;
+
     public int damageOverTime = 10;
 
     [Header("Attributes")]
@@ -20,6 +22,7 @@ public class MachineTurret : MonoBehaviour {
 
     void Start() {
         InvokeRepeating("UpdateTarget", 0f, 1f);
+        audioSource= GetComponent<AudioSource>();
     }
 
     void UpdateTarget()
@@ -46,6 +49,7 @@ public class MachineTurret : MonoBehaviour {
         if (target == null) {
             if (lineRenderer.enabled) {
                 Debug.Log("turn off");
+                audioSource.Stop();
                 lineRenderer.enabled = false;
                 impactEffect.Stop();
                 shootEffect.Stop();
@@ -76,6 +80,7 @@ public class MachineTurret : MonoBehaviour {
             lineRenderer.enabled = true;
             impactEffect.Play();
             shootEffect.Play();
+            audioSource.Play();
         }
         lineRenderer.SetPosition(0, firePoint.position);
         lineRenderer.SetPosition(1, target.position);
