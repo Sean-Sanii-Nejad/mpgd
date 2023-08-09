@@ -60,7 +60,6 @@ public class WaveSpawner : MonoBehaviour
     {
         Increment();
         PlayerStats.Rounds += 1;
-        Debug.Log("1");
         isSpawning = true;
         yield return SpawnEnemies(enemyPreFab_0, 8, 0.3f);
         yield return SpawnEnemies(enemyPreFab_1, 4, 0.6f);
@@ -72,7 +71,6 @@ public class WaveSpawner : MonoBehaviour
     {
         Increment();
         PlayerStats.Rounds += 1;
-        Debug.Log("2");
         isSpawning = true;
         yield return SpawnEnemies(enemyPreFab_0, 2, 0.3f);
         yield return SpawnEnemies(enemyPreFab_1, 5, 0.5f);
@@ -84,7 +82,6 @@ public class WaveSpawner : MonoBehaviour
     {
         Increment();
         PlayerStats.Rounds += 1;
-        Debug.Log("3");
         isSpawning = true;
         yield return SpawnEnemies(enemyPreFab_0, 8, 0.1f);
         yield return SpawnEnemies(enemyPreFab_1, 2, 0.5f);

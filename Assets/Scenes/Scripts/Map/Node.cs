@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Node : MonoBehaviour
@@ -31,14 +32,17 @@ public class Node : MonoBehaviour
 
     void OnMouseDown() {
         if (!buildManager.CanBuild) return;
+
         if (turret != null) {
-            Debug.Log("Can't Build");
+            buildManager.SelectNode(this);
             return;
         }
+
         buildManager.BuildTurretOn(this);
     }
 
     void OnMouseEnter() {
+
         if (!buildManager.CanBuild) return;
 
         if(buildManager.HasMoney) {
@@ -53,6 +57,22 @@ public class Node : MonoBehaviour
 
     void OnMouseExit() {
         rend.material.color = startColor;
+    }
+
+    public void UpgradeTurret()
+    {
+        //if (PlayerStats.Money < upg.cost)
+        //{
+        //    return;
+        //}
+
+        //PlayerStats.Money -= turretToBuild.cost;
+
+        //GameObject turret = (GameObject)Instantiate(turretToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
+        //node.turret = turret;
+
+        //GameObject effect = (GameObject)Instantiate(buildEffect, node.GetBuildPosition(), Quaternion.identity);
+        //Destroy(effect, 2f);
     }
 
 }

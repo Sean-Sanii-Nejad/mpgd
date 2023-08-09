@@ -6,10 +6,13 @@ using static UnityEngine.GraphicsBuffer;
 public class BuildManager : MonoBehaviour { 
     
     public TurretBlueprint turretToBuild;
+    private Node selectedNode;
 
     public GameObject buildEffect;
 
     public static BuildManager instance;
+
+    public NodeUI nodeUI;
 
     public bool CanBuild { get { return turretToBuild != null; } }
     public bool HasMoney { get { return PlayerStats.Money >= turretToBuild.cost; } }
@@ -21,9 +24,7 @@ public class BuildManager : MonoBehaviour {
     private void Start() {
     }
 
-    public void SelectTurretToBuild(TurretBlueprint turret) {
-        turretToBuild = turret; 
-    }
+    
 
     public void BuildTurretOn(Node node) {
 
@@ -38,5 +39,31 @@ public class BuildManager : MonoBehaviour {
 
         GameObject effect = (GameObject) Instantiate(buildEffect, node.GetBuildPosition(), Quaternion.identity);
         Destroy(effect, 2f);
+    }
+
+    public void SelectNode(Node node)
+    {
+        if(selectedNode == node)
+        {
+            DeselectNode();
+            return;
+        }
+        selectedNode= node;
+        turretToBuild= null;
+
+        nodeUI.SetTarget(node);
+    }
+
+    public void SelectTurretToBuild(TurretBlueprint turret)
+    {
+        turretToBuild = turret;
+        selectedNode = null;
+        nodeUI.Hide();
+    }
+
+    public void DeselectNode()
+    {
+        selectedNode = null;
+        nodeUI.Hide();
     }
 }
